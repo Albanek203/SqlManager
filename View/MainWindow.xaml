@@ -29,10 +29,13 @@
                            VerticalAlignment="Center"
                            Margin="0,0,20,0" />
                 <ComboBox Name="CmbListNameDb"
+                          ToolTip="Select the DB name"
                           VerticalAlignment="Center"
                           SelectionChanged="CmbListNameDb_OnSelectionChanged" />
             </StackPanel>
-            <Button Grid.Column="1" Click="BtnSettings">
+            <Button Grid.Column="1"
+                    ToolTip="Connection settings"
+                    Click="BtnSettings">
                 <materialDesign:PackIcon Kind="Settings" />
             </Button>
         </Grid>
@@ -47,6 +50,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Column="0" Name="TxtQuery" />
                 <Button Grid.Column="1"
+                        ToolTip="Execute"
                         Content="Execute"
                         Foreground="WhiteSmoke"
                         FontWeight="Bold"

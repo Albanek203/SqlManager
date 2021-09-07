@@ -25,9 +25,11 @@
 
         <StackPanel Name="PanelInputValues" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
             <TextBox Name="TxtServerName"
+                     ToolTip="Enter server name"
                      Margin="10,0,10,0"
                      materialDesign:HintAssist.Hint="Enter server name" />
             <CheckBox Name="IntegratedSecurity"
+                      ToolTip="Integrated security"
                       Content="Integrated security"
                       FontWeight="Bold"
                       Margin="10,10,10,0"
@@ -35,13 +37,16 @@
                       Unchecked="IntegratedSecurity_OnUnchecked" />
             <StackPanel Name="PanelIntegratedSecurity">
                 <TextBox Name="TxtLogin"
+                         ToolTip="Enter login"
                          Margin="10,10,10,0"
                          materialDesign:HintAssist.Hint="Enter login" />
                 <PasswordBox Name="TxtPassword"
+                             ToolTip="Enter password"
                              Margin="10,10,10,0"
                              materialDesign:HintAssist.Hint="Enter password" />
             </StackPanel>
             <Button Content="Connect"
+                    ToolTip="Try to connect"
                     Background="#404040"
                     BorderThickness="0"
                     Height="50"
