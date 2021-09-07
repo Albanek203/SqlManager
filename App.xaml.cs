@@ -2,6 +2,7 @@
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using SqlManager.Data.Models;
+using SqlManager.View;
 
 namespace SqlManager {
     /// <summary>
@@ -16,6 +17,7 @@ namespace SqlManager {
         }
         private static void ConfigServices(IServiceCollection serviceProvider) {
             serviceProvider.AddSingleton<DataController>();
+            serviceProvider.AddTransient<ConnectSettingsWindow>();
             serviceProvider.AddTransient<MainWindow>();
         }
         private void App_OnStartup(object sender, StartupEventArgs e) {
