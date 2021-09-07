@@ -19,7 +19,7 @@ namespace SqlManager.View {
             Effect = new System.Windows.Media.Effects.BlurEffect { Radius = 100 };
 
             var errorWindow = App.ServiceProvider.GetService<ConnectSettingsWindow>();
-            if(errorWindow != null) {
+            if (errorWindow != null) {
                 errorWindow.Owner = this;
                 errorWindow.ShowDialog();
             }
@@ -33,7 +33,7 @@ namespace SqlManager.View {
             adapter.Fill(_dataController.DataSet);
 
             PanelMain.Children.Clear();
-            foreach(DataTable table in _dataController.DataSet.Tables) {
+            foreach (DataTable table in _dataController.DataSet.Tables) {
                 PanelMain.Children.Add(new DataGrid {
                     ItemsSource = table.DefaultView, CanUserResizeRows = false, CanUserResizeColumns = false
                 });
@@ -41,7 +41,7 @@ namespace SqlManager.View {
         }
         private void CmbListNameDb_OnSelectionChanged(object sender, SelectionChangedEventArgs e) {
             GridExecute.Visibility = CmbListNameDb.SelectedIndex == -1 ? Visibility.Collapsed : Visibility.Visible;
-            TxtQuery.Text = "";
+            TxtQuery.Text          = "";
             PanelMain.Children.Clear();
             _dataController.ChangeDb(CmbListNameDb.SelectedItem.ToString());
         }

@@ -7,10 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Data\Images\loadingAnimation.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
       <PackageReference Include="MaterialDesignColors" Version="2.0.3-ci8" />
       <PackageReference Include="MaterialDesignThemes" Version="4.2.1-ci8" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0-preview.7.21377.19" />
       <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Data\Images\loadingAnimation.gif" />
+      <None Remove="Data\Images\loading-78.gif" />
     </ItemGroup>
 
 </Project>

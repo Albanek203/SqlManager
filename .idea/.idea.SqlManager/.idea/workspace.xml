@@ -4,9 +4,15 @@
     <projectFile>SqlManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Added window to configure server connection / combined execute command with current DB">
+    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Fixed a bug that occurred when changing DB">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SqlManager/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SqlManager/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SqlManager/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SqlManager/v16/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Models/DataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/DataController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SqlManager.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SqlManager.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MainWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +21,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Projects/SqlManager/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xoqZM6YaYt4bUFiyZGB7I0kkKG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -72,6 +75,10 @@
       <option name="presentableId" value="Default" />
       <updated>1631031844782</updated>
       <workItem from="1631031848236" duration="1250000" />
+      <workItem from="1631033732889" duration="705000" />
+      <workItem from="1631034873957" duration="210000" />
+      <workItem from="1631035423587" duration="593000" />
+      <workItem from="1631036441297" duration="149000" />
     </task>
     <task id="LOCAL-00002" summary="Added window to configure server connection / combined execute command with current DB">
       <created>1631032100364</created>
@@ -80,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631032100364</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed a bug that occurred when changing DB">
+      <created>1631033756472</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631033756473</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,7 +118,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DI was added to the program / the main window was decorated / event processing was performed on the Execute &amp; Settings buttons" />
     <MESSAGE value="Added window to configure server connection / combined execute command with current DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added window to configure server connection / combined execute command with current DB" />
+    <MESSAGE value="Fixed a bug that occurred when changing DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug that occurred when changing DB" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

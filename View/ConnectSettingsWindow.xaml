@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:SqlManager.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         FontSize="20"
@@ -14,7 +13,17 @@
         WindowStartupLocation="CenterOwner"
         Title="ConnectSettingsWindow" Height="400" Width="400">
     <Grid Background="#505050">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+        <TextBlock Name="TxtLoading" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="30"
+                   Visibility="Collapsed"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap">
+            Wait a minute<LineBreak/>We are checking the data
+        </TextBlock>
+
+        <StackPanel Name="PanelInputValues" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
             <TextBox Name="TxtServerName"
                      Margin="10,0,10,0"
                      materialDesign:HintAssist.Hint="Enter server name" />
