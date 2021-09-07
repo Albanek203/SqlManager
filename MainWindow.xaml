@@ -3,10 +3,58 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SqlManager"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        FontSize="20"
+        FontWeight="Bold"
+        Foreground="WhiteSmoke"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid Background="#202020">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Current DB:"
+                           VerticalAlignment="Center"
+                           Margin="0,0,20,0" />
+                <ComboBox Name="CmbListNameDb"
+                          VerticalAlignment="Center"
+                          SelectionChanged="CmbListNameDb_OnSelectionChanged" />
+            </StackPanel>
+            <Button Grid.Column="1" Click="BtnSettings">
+                <materialDesign:PackIcon Kind="Settings" />
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" Name="GridExecute"
+              Background="#303030"
+              Margin="10"
+              Visibility="Collapsed">
+            <Grid Background="#242424">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Name="TxtQuery" />
+                <Button Grid.Column="1"
+                        Content="Execute"
+                        Foreground="WhiteSmoke"
+                        FontWeight="Bold"
+                        FontSize="18"
+                        Click="BtnExecute_OnClick" />
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Row="2" Name="PanelMain" />
     </Grid>
+
 </Window>
