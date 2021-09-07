@@ -4,12 +4,9 @@
     <projectFile>SqlManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="DI was added to the program / the main window was decorated / event processing was performed on the Execute &amp; Settings buttons">
-      <change afterPath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml" afterDir="false" />
+    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Added window to configure server connection / combined execute command with current DB">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/View/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/DataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/DataController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +15,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Projects/SqlManager/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xoqZM6YaYt4bUFiyZGB7I0kkKG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -71,9 +71,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631031844782</updated>
-      <workItem from="1631031848236" duration="172000" />
+      <workItem from="1631031848236" duration="1250000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added window to configure server connection / combined execute command with current DB">
+      <created>1631032100364</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631032100364</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,7 +103,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DI was added to the program / the main window was decorated / event processing was performed on the Execute &amp; Settings buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="DI was added to the program / the main window was decorated / event processing was performed on the Execute &amp; Settings buttons" />
+    <MESSAGE value="Added window to configure server connection / combined execute command with current DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added window to configure server connection / combined execute command with current DB" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

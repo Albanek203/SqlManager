@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows;
 
 namespace SqlManager.Data.Models {
     public class DataController {
+        private         string        _currentCatalog;
         public readonly List<string>  DbNameList    = new List<string>();
         public          SqlConnection SqlConnection = new SqlConnection();
-        public          DataSet       DataSet       = new DataSet();
+        public DataSet DataSet;
         public void ChangeDb(string newDb) {
             var sqlConnection = SqlConnection.ConnectionString;
 
-            var s = sqlConnection.IndexOf("Initial Catalog", StringComparison.Ordinal);
-            if (s == -1) {
+            var existsCatalog = sqlConnection.Contains("Initial Catalog");
+            if(!existsCatalog)
                 sqlConnection += $"Initial Catalog={newDb};";
-            }
-            else {
-                var insert = sqlConnection.Insert(s, "9");
-                MessageBox.Show("Hello\r\n" + insert + $"\r\n {s}");
-            }
-
+            else
+                sqlConnection = sqlConnection.Replace(_currentCatalog, newDb);
+            _currentCatalog = newDb;
             SqlConnection = new SqlConnection(sqlConnection);
+            DataSet = new DataSet();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace SqlManager.View {
             Effect = new System.Windows.Media.Effects.BlurEffect { Radius = 100 };
 
             var errorWindow = App.ServiceProvider.GetService<ConnectSettingsWindow>();
-            if (errorWindow != null) {
+            if(errorWindow != null) {
                 errorWindow.Owner = this;
                 errorWindow.ShowDialog();
             }
@@ -29,16 +29,20 @@ namespace SqlManager.View {
         }
         private void BtnExecute_OnClick(object sender, RoutedEventArgs e) {
             var adapter = new SqlDataAdapter(TxtQuery.Text, _dataController.SqlConnection);
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            /*adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;*/
             adapter.Fill(_dataController.DataSet);
 
             PanelMain.Children.Clear();
-            foreach (DataTable table in _dataController.DataSet.Tables) {
-                PanelMain.Children.Add(new DataGrid { ItemsSource = table.DefaultView });
+            foreach(DataTable table in _dataController.DataSet.Tables) {
+                PanelMain.Children.Add(new DataGrid {
+                    ItemsSource = table.DefaultView, CanUserResizeRows = false, CanUserResizeColumns = false
+                });
             }
         }
         private void CmbListNameDb_OnSelectionChanged(object sender, SelectionChangedEventArgs e) {
             GridExecute.Visibility = CmbListNameDb.SelectedIndex == -1 ? Visibility.Collapsed : Visibility.Visible;
+            TxtQuery.Text = "";
+            PanelMain.Children.Clear();
             _dataController.ChangeDb(CmbListNameDb.SelectedItem.ToString());
         }
     }
