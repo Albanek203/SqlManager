@@ -7,7 +7,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Microsoft.Extensions.DependencyInjection;
 using SqlManager.Data.Models;
-using SqlManager.Data.Service;
 
 namespace SqlManager.View {
     /// <summary>
@@ -98,17 +97,8 @@ namespace SqlManager.View {
             PanelMain.Children.Clear();
             _dataController.ChangeDb(CmbListNameDb.SelectedItem.ToString());
         }
-        private void AcceptChanges(DataTable dataTable) {
-            var dbService = App.ServiceProvider.GetService<DbService>();
-            if (dbService != null) {
-                dbService.InsertRow(dataTable);
-                dbService.UpdateRow(dataTable);
-                dbService.DeleteRow(dataTable);
-            }
-            dataTable.AcceptChanges();
-        }
         private void SaveChanges_OnClick(object sender, RoutedEventArgs e) {
-            foreach (DataTable table in _dataController.DataSet.Tables) AcceptChanges(table);
+            foreach (DataTable table in _dataController.DataSet.Tables) table.ExtensionAcceptChanges();
             BtnSaveChanges.Visibility = Visibility.Collapsed;
         }
     }

@@ -4,14 +4,9 @@
     <projectFile>SqlManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Added exit button / Added window control (move / close / collapse) / Improved window style">
-      <change afterPath="$PROJECT_DIR$/Data/Repository/DbRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Service/DbService.cs" afterDir="false" />
+    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Added dbService, to automatically change data in DB">
+      <change afterPath="$PROJECT_DIR$/Data/Models/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/SqlManager/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SqlManager/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/SqlManager/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SqlManager/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/View/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MainWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +88,8 @@
       <workItem from="1631096486103" duration="183000" />
       <workItem from="1631098546072" duration="2754000" />
       <workItem from="1631101719752" duration="240000" />
-      <workItem from="1631105818416" duration="312000" />
+      <workItem from="1631105818416" duration="398000" />
+      <workItem from="1631114038044" duration="297000" />
     </task>
     <task id="LOCAL-00002" summary="Added window to configure server connection / combined execute command with current DB">
       <created>1631032100364</created>
@@ -130,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631096655383</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added dbService, to automatically change data in DB">
+      <created>1631106212883</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631106212883</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +161,8 @@
     <MESSAGE value="Refactor / Checked for connection to another Task" />
     <MESSAGE value="Add some ToolTip" />
     <MESSAGE value="Added exit button / Added window control (move / close / collapse) / Improved window style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added exit button / Added window control (move / close / collapse) / Improved window style" />
+    <MESSAGE value="Added dbService, to automatically change data in DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dbService, to automatically change data in DB" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
