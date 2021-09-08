@@ -4,10 +4,16 @@
     <projectFile>SqlManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Refactor / Checked for connection to another Task">
+    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Add some ToolTip">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SqlManager/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SqlManager/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SqlManager/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SqlManager/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/DataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/DataController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/View/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MainWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +22,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1xoqZM6YaYt4bUFiyZGB7I0kkKG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -73,7 +87,11 @@
       <workItem from="1631033732889" duration="705000" />
       <workItem from="1631034873957" duration="210000" />
       <workItem from="1631035423587" duration="593000" />
-      <workItem from="1631036441297" duration="566000" />
+      <workItem from="1631036441297" duration="585000" />
+      <workItem from="1631090719432" duration="785000" />
+      <workItem from="1631094060290" duration="663000" />
+      <workItem from="1631095099681" duration="842000" />
+      <workItem from="1631096486103" duration="51000" />
     </task>
     <task id="LOCAL-00002" summary="Added window to configure server connection / combined execute command with current DB">
       <created>1631032100364</created>
@@ -96,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631036595768</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add some ToolTip">
+      <created>1631037023465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631037023465</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +147,8 @@
     <MESSAGE value="Added window to configure server connection / combined execute command with current DB" />
     <MESSAGE value="Fixed a bug that occurred when changing DB" />
     <MESSAGE value="Refactor / Checked for connection to another Task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor / Checked for connection to another Task" />
+    <MESSAGE value="Add some ToolTip" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some ToolTip" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

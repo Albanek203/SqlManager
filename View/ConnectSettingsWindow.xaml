@@ -13,17 +13,25 @@
         WindowStartupLocation="CenterOwner"
         Title="ConnectSettingsWindow" Height="400" Width="400">
     <Grid Background="#505050">
-        <TextBlock Name="TxtLoading" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" 
+        <Button Margin="5"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="BtnExit_OnClick">
+            <materialDesign:PackIcon Kind="ExitToApp" />
+        </Button>
+        <TextBlock Name="TxtLoading"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
                    FontSize="30"
                    Visibility="Collapsed"
                    TextAlignment="Center"
                    TextWrapping="Wrap">
-            Wait a minute<LineBreak/>We are checking the data
+            Wait a minute<LineBreak />We are checking the data
         </TextBlock>
-
-        <StackPanel Name="PanelInputValues" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+        <StackPanel Name="PanelInputValues"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="300">
             <TextBox Name="TxtServerName"
                      ToolTip="Enter server name"
                      Margin="10,0,10,0"
@@ -47,7 +55,7 @@
             </StackPanel>
             <Button Content="Connect"
                     ToolTip="Try to connect"
-                    Background="#404040"
+                    Background="SteelBlue"
                     BorderThickness="0"
                     Height="50"
                     Margin="10"

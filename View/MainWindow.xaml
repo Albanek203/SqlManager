@@ -5,20 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        FontSize="20"
+        FontSize="17"
         FontWeight="Bold"
         Foreground="WhiteSmoke"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="600" Width="900">
-    <Grid Background="#202020">
+        Title="MainWindow" Height="600" Width="900"
+        Loaded="MainWindow_OnLoaded">
+    <Window.Resources>
+        <Style x:Key="HeaderButtonsStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+            <Style.Setters>
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Margin" Value="5,2,2,0" />
+                <Setter Property="Height" Value="20" />
+                <Setter Property="Width" Value="20" />
+                <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="180" />
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#303030">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0"
+              Background="#202020"
+              MouseLeftButtonDown="MovePanel_OnMouseLeftButtonDown">
+            <DockPanel LastChildFill="False">
+                <TextBlock Name="TxtServerName"
+                           DockPanel.Dock="Left"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Consolas"
+                           FontSize="16"
+                           Foreground="WhiteSmoke"
+                           FontWeight="Bold" />
+                <Button DockPanel.Dock="Right"
+                        ToolTip="Close"
+                        Background="Brown"
+                        Style="{StaticResource HeaderButtonsStyle}"
+                        Click="BtnClose_OnClick" />
+                <Button DockPanel.Dock="Right"
+                        ToolTip="Collapse"
+                        Background="Orange"
+                        Click="BtnHide_OnClick"
+                        Style="{DynamicResource HeaderButtonsStyle}" />
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
@@ -35,21 +72,25 @@
             </StackPanel>
             <Button Grid.Column="1"
                     ToolTip="Connection settings"
+                    Background="SteelBlue"
+                    BorderThickness="0"
+                    Margin="5"
                     Click="BtnSettings">
-                <materialDesign:PackIcon Kind="Settings" />
+                <materialDesign:PackIcon Kind="Settings" Foreground="WhiteSmoke" />
             </Button>
         </Grid>
-        <Grid Grid.Row="1" Name="GridExecute"
+        <Grid Grid.Row="2" Name="GridExecute"
               Background="#303030"
               Margin="10"
               Visibility="Collapsed">
-            <Grid Background="#242424">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Column="0" Name="TxtQuery" />
                 <Button Grid.Column="1"
+                        Margin="10,0,0,0"
                         ToolTip="Execute"
                         Content="Execute"
                         Foreground="WhiteSmoke"
@@ -58,7 +99,8 @@
                         Click="BtnExecute_OnClick" />
             </Grid>
         </Grid>
-        <StackPanel Grid.Row="2" Name="PanelMain" />
+        <ScrollViewer Grid.Row="3">
+            <StackPanel Name="PanelMain" Background="#454545" />
+        </ScrollViewer>
     </Grid>
-
 </Window>

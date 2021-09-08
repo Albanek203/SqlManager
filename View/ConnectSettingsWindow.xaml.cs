@@ -32,8 +32,7 @@ namespace SqlManager.View {
                     while (reader.Read()) _dataController.DbNameList.Add(reader.GetString(0));
                     _dataController.SqlConnection.Close();
                 } catch (Exception) {
-                    MessageBox.Show($"Error connection", "Error", MessageBoxButton.OK
-                                  , MessageBoxImage.Error);
+                    MessageBox.Show($"Error connection", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     success = false;
                 }
             });
@@ -42,13 +41,25 @@ namespace SqlManager.View {
             PanelInputValues.Visibility = Visibility.Visible;
         }
         private void BtnConnect_OnClick(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrWhiteSpace(TxtServerName.Text)) {
+                MessageBox.Show("Enter server name!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             var strConnection = $@"Data Source={TxtServerName.Text};";
             if (IntegratedSecurity.IsChecked == true)
                 strConnection += "Integrated Security=True;";
-            else
+            else {
+                if (string.IsNullOrWhiteSpace(TxtLogin.Text) || string.IsNullOrWhiteSpace(TxtPassword.Password)) {
+                    MessageBox.Show("Enter login and password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
                 strConnection += $"User={TxtLogin.Text} Password={TxtPassword.Password};";
+            }
             _dataController.SqlConnection = new SqlConnection(strConnection);
             CheckConnection();
+            _dataController.CurrentServer = TxtServerName.Text;
         }
+        private void BtnExit_OnClick(object sender, RoutedEventArgs e) { DialogResult = false; }
     }
 }

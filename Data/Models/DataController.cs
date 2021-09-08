@@ -8,6 +8,7 @@ namespace SqlManager.Data.Models {
         public readonly List<string>  DbNameList    = new();
         public          SqlConnection SqlConnection = new();
         public          DataSet       DataSet;
+        public          string        CurrentServer { get; set; }
         public void ChangeDb(string newDb) {
             var sqlConnection = SqlConnection.ConnectionString;
 
