@@ -2,6 +2,8 @@
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using SqlManager.Data.Models;
+using SqlManager.Data.Repository;
+using SqlManager.Data.Service;
 using SqlManager.View;
 
 namespace SqlManager {
@@ -18,6 +20,8 @@ namespace SqlManager {
         private static void ConfigServices(IServiceCollection serviceProvider) {
             serviceProvider.AddSingleton<DataController>();
             serviceProvider.AddTransient<ConnectSettingsWindow>();
+            serviceProvider.AddTransient<DbRepository>();
+            serviceProvider.AddTransient<DbService>();
             serviceProvider.AddTransient<MainWindow>();
         }
         private void App_OnStartup(object sender, StartupEventArgs e) {

@@ -70,14 +70,25 @@
                           VerticalAlignment="Center"
                           SelectionChanged="CmbListNameDb_OnSelectionChanged" />
             </StackPanel>
-            <Button Grid.Column="1"
-                    ToolTip="Connection settings"
-                    Background="SteelBlue"
-                    BorderThickness="0"
-                    Margin="5"
-                    Click="BtnSettings">
-                <materialDesign:PackIcon Kind="Settings" Foreground="WhiteSmoke" />
-            </Button>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button Name="BtnSaveChanges"
+                        ToolTip="Connection settings"
+                        Background="SteelBlue"
+                        BorderThickness="0"
+                        Margin="5"
+                        Visibility="Collapsed"
+                        Foreground="WhiteSmoke"
+                        Content="Save changes"
+                        Click="SaveChanges_OnClick" />
+                <Button ToolTip="Connection settings"
+                        Background="SteelBlue"
+                        BorderThickness="0"
+                        Margin="5"
+                        Click="BtnSettings">
+                    <materialDesign:PackIcon Kind="Settings" Foreground="WhiteSmoke" />
+                </Button>
+            </StackPanel>
+
         </Grid>
         <Grid Grid.Row="2" Name="GridExecute"
               Background="#303030"
