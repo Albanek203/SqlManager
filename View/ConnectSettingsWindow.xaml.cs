@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows;
 using SqlManager.Data.Models;
 
@@ -18,47 +16,31 @@ namespace SqlManager.View {
         private void IntegratedSecurity_OnUnchecked(object sender, RoutedEventArgs e) {
             PanelIntegratedSecurity.Visibility = Visibility.Visible;
         }
-        private async void CheckConnection() {
+        private async Task<bool> CheckConnection() {
             PanelInputValues.Visibility = Visibility.Collapsed;
             TxtLoading.Visibility       = Visibility.Visible;
-            var success = true;
-            await Task.Run(() => {
-                try {
-                    _dataController.SqlConnection.Open();
-                    var sqlString =
-                        $"SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN ('master', 'tempdb', 'model', 'msdb');";
-                    var cmd    = new SqlCommand(sqlString, _dataController.SqlConnection);
-                    var reader = cmd.ExecuteReader();
-                    while (reader.Read()) _dataController.DbNameList.Add(reader.GetString(0));
-                    _dataController.SqlConnection.Close();
-                } catch (Exception) {
-                    MessageBox.Show($"Error connection", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    success = false;
-                }
+            BtnExit.Visibility          = Visibility.Collapsed;
+
+            var success = IntegratedSecurity.IsChecked != null && await _dataController.Connection(new ConnectionData {
+                ServerName         = TxtServerName.Text
+              , Login              = TxtLogin.Text
+              , Password           = TxtPassword.Password
+              , IntegratedSecurity = (bool)IntegratedSecurity.IsChecked
             });
+
             if (success) DialogResult = true;
             TxtLoading.Visibility       = Visibility.Collapsed;
             PanelInputValues.Visibility = Visibility.Visible;
+            BtnExit.Visibility          = Visibility.Visible;
+            return success;
         }
-        private void BtnConnect_OnClick(object sender, RoutedEventArgs e) {
+        private async void BtnConnect_OnClick(object sender, RoutedEventArgs e) {
             if (string.IsNullOrWhiteSpace(TxtServerName.Text)) {
                 MessageBox.Show("Enter server name!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
-            var strConnection = $@"Data Source={TxtServerName.Text};";
-            if (IntegratedSecurity.IsChecked == true)
-                strConnection += "Integrated Security=True;";
-            else {
-                if (string.IsNullOrWhiteSpace(TxtLogin.Text) || string.IsNullOrWhiteSpace(TxtPassword.Password)) {
-                    MessageBox.Show("Enter login and password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-                strConnection += $"User={TxtLogin.Text} Password={TxtPassword.Password};";
-            }
-            _dataController.SqlConnection = new SqlConnection(strConnection);
-            CheckConnection();
-            _dataController.CurrentServer = TxtServerName.Text;
+            var success = await CheckConnection();
+            if (!success) MessageBox.Show("Error connection", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void BtnExit_OnClick(object sender, RoutedEventArgs e) { DialogResult = false; }
     }

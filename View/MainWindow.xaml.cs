@@ -1,7 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Data.Common;
-using System.Data.SqlClient;
+﻿using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -18,7 +15,10 @@ namespace SqlManager.View {
             InitializeComponent();
             _dataController = dataController;
         }
-        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e) {
+        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e) { ShowSettings(); }
+        //
+        private void BtnSettings(object sender, RoutedEventArgs e) { ShowSettings(); }
+        private void ShowSettings() {
             Effect = new System.Windows.Media.Effects.BlurEffect { Radius = 100 };
             var errorWindow = App.ServiceProvider.GetService<ConnectSettingsWindow>();
             if (errorWindow != null) {
@@ -33,31 +33,14 @@ namespace SqlManager.View {
         private void MovePanel_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e) { DragMove(); }
         private void BtnClose_OnClick(object sender, RoutedEventArgs e) { Application.Current.Shutdown(); }
         private void BtnHide_OnClick(object sender, RoutedEventArgs e) { WindowState = WindowState.Minimized; }
-        private void BtnSettings(object sender, RoutedEventArgs e) {
-            Effect = new System.Windows.Media.Effects.BlurEffect { Radius = 100 };
-            var errorWindow = App.ServiceProvider.GetService<ConnectSettingsWindow>();
-            if (errorWindow != null) {
-                errorWindow.Owner = this;
-                if (errorWindow.ShowDialog() == true) {
-                    CmbListNameDb.ItemsSource = _dataController.DbNameList;
-                    TxtServerName.Text        = $"Server: {_dataController.CurrentServer}";
-                }
-            }
-            Effect = new System.Windows.Media.Effects.BlurEffect { Radius = 0 };
-        }
         private void BtnExecute_OnClick(object sender, RoutedEventArgs e) {
-            var adapter = new SqlDataAdapter(TxtQuery.Text, _dataController.SqlConnection);
-            _dataController.DataSet.Tables.Clear();
-            try {
-                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                adapter.TableMappings.AddRange(CreateMappingCollection(TxtQuery.Text));
-                adapter.Fill(_dataController.DataSet);
-            } catch (Exception exception) {
-                MessageBox.Show(exception.ToString().Split('\n')[0], "Error", MessageBoxButton.OK
-                              , MessageBoxImage.Error);
+            var error = _dataController.Execute(TxtQuery.Text);
+            if (error != null) {
+                PanelMain.Children.Clear();
+                _dataController.DataSet.Tables.Clear();
+                MessageBox.Show(error, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
             PanelMain.Children.Clear();
             foreach (DataTable table in _dataController.DataSet.Tables) {
                 var grid = new DataGrid {
@@ -74,20 +57,6 @@ namespace SqlManager.View {
                 PanelMain.Children.Add(new Separator { Height = 20 });
             }
         }
-        private DataTableMapping[] CreateMappingCollection(string cmd) {
-            cmd = cmd.ToLower();
-            cmd = cmd.Replace(";", " ");
-            var res = cmd.Split("from");
-            var map = new DataTableMapping[res.Length - 1];
-
-            for (int i = 1, countIndex = 0; i < res.Length; i++, countIndex++) {
-                if (i == 1)
-                    map[countIndex] = new DataTableMapping("Table", res[i].Split(" ")[1]);
-                else
-                    map[countIndex] = new DataTableMapping($"Table{countIndex}", res[i].Split(" ")[1]);
-            }
-            return map;
-        }
         private void EditBegin(object sender, DataGridBeginningEditEventArgs e) {
             BtnSaveChanges.Visibility = Visibility.Visible;
         }
@@ -98,7 +67,7 @@ namespace SqlManager.View {
             _dataController.ChangeDb(CmbListNameDb.SelectedItem.ToString());
         }
         private void SaveChanges_OnClick(object sender, RoutedEventArgs e) {
-            foreach (DataTable table in _dataController.DataSet.Tables) table.ExtensionAcceptChanges();
+            _dataController.SqlDataAdapter.Update(_dataController.DataSet);
             BtnSaveChanges.Visibility = Visibility.Collapsed;
         }
     }

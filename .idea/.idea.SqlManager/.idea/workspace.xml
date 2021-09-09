@@ -4,9 +4,19 @@
     <projectFile>SqlManager.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Added dbService, to automatically change data in DB">
-      <change afterPath="$PROJECT_DIR$/Data/Models/Extensions.cs" afterDir="false" />
+    <list default="true" id="a6a6aba8-9043-4a5a-86b2-662f61e417e1" name="Changes" comment="Add ExtensionAcceptChanges for table">
+      <change afterPath="$PROJECT_DIR$/Data/Models/ConnectionData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SqlManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SqlManager/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SqlManager/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SqlManager/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SqlManager/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/DataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/DataController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/Extensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Repository/DbRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Service/DbService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/ConnectSettingsWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/View/MainWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +99,11 @@
       <workItem from="1631098546072" duration="2754000" />
       <workItem from="1631101719752" duration="240000" />
       <workItem from="1631105818416" duration="398000" />
-      <workItem from="1631114038044" duration="297000" />
+      <workItem from="1631114038044" duration="336000" />
+      <workItem from="1631115284525" duration="2003000" />
+      <workItem from="1631118312818" duration="6626000" />
+      <workItem from="1631196171640" duration="3415000" />
+      <workItem from="1631200808881" duration="139000" />
     </task>
     <task id="LOCAL-00002" summary="Added window to configure server connection / combined execute command with current DB">
       <created>1631032100364</created>
@@ -133,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631106212883</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add ExtensionAcceptChanges for table">
+      <created>1631114357694</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631114357694</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +183,8 @@
     <MESSAGE value="Add some ToolTip" />
     <MESSAGE value="Added exit button / Added window control (move / close / collapse) / Improved window style" />
     <MESSAGE value="Added dbService, to automatically change data in DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added dbService, to automatically change data in DB" />
+    <MESSAGE value="Add ExtensionAcceptChanges for table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ExtensionAcceptChanges for table" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
